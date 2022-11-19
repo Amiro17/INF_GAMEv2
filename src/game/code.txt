@@ -1,0 +1,32 @@
+//        BufferedImage myPicture = null;
+//        try {
+//            myPicture = ImageIO.read(new File("C:\\Users\\amira\\IdeaProjects\\inf_game\\src\\game\\bg1.jpg"));
+//        } catch (IOException e) {
+//            e.printStackTrace();
+//        }
+//
+//        Image imgscaled = myPicture.getScaledInstance(width,height, Image.SCALE_SMOOTH);
+//        JLabel picLabel = new JLabel(new ImageIcon(imgscaled));
+//        picLabel.setBounds(0,0,width,height);
+
+
+
+//        JLabel gg = new JLabel("Start GAME");
+//        gg.setFont(new Font("Serif", Font.PLAIN, 24));
+//        gg.setBounds(50,50,50,50);
+//        panel.add(gg);
+
+
+
+//        Mpanel = new JPanel();
+
+//        Mpanel.setLayout(null);
+//        Mpanel.setSize(width, height);
+//
+//        frame.add(Mpanel);
+
+
+
+
+
+
