@@ -6,7 +6,11 @@ import java.awt.event.ActionListener;
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
 
-public class Gui_actionlistener extends Gui implements ActionListener, KeyListener {
+import static game.Gui.Mpanel;
+import static game.Gui.main_frame;
+
+
+public class Gui_actionlistener extends Rooms implements ActionListener, KeyListener {
 
 
     public void actionlistner(){
