@@ -35,13 +35,13 @@ public class Rooms{
 
         try {
 
-            GPanel = new ImagePanel(new ImageIcon(ImageIO.read(new File("C:\\Users\\amira\\IdeaProjects\\INF_GAME\\src\\game\\files\\bg2.png"))).getImage());
+            GPanel = new ImagePanel(new ImageIcon(ImageIO.read(new File(new File("/game/files/bg2.png").getPath()))).getImage());
             GPanel.setVisible(false);
 
-            RoomP = new ImagePanel(new ImageIcon(ImageIO.read(new File("C:\\Users\\amira\\IdeaProjects\\INF_GAME\\src\\game\\files\\roombg.jpg"))).getImage());
+            RoomP = new ImagePanel(new ImageIcon(ImageIO.read(new File(new File("/game/files/roombg.jpg").getPath()))).getImage());
             RoomP.setVisible(false);
 
-            GymP = new ImagePanel(new ImageIcon(ImageIO.read(new File("C:\\Users\\amira\\IdeaProjects\\INF_GAME\\src\\game\\files\\gym_bg.png"))).getImage());
+            GymP = new ImagePanel(new ImageIcon(ImageIO.read(new File(new File("/game/files/gym_bg.png").getPath()))).getImage());
             GymP.setVisible(false);
 
 
@@ -56,6 +56,8 @@ public class Rooms{
 
     }
 
+
+
     public void GPanel(JFrame main_frame) {
 
         main_frame.getContentPane().add(GPanel);
@@ -65,6 +67,7 @@ public class Rooms{
 
 
         overlay.main(GPanel);
+
         overlay.right_arrow(GPanel, RoomP);
         overlay.left_arrow(GPanel, GymP);
 

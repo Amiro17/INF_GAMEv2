@@ -1,9 +1,10 @@
 
 package game;
 
+public class Main{
 
-public class Main {
-    public static void main(String[] args)  {
+
+    public static void main(String[] args) {
 
         Settings settings = new Settings();
         Gui gui = new Gui();
@@ -11,13 +12,5 @@ public class Main {
         gui.main();
         act.actionlistner();
 
-
-
-
-
     }
-
-
-
-
 }

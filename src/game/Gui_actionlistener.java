@@ -12,6 +12,8 @@ import static game.Gui.main_frame;
 
 public class Gui_actionlistener extends Rooms implements ActionListener, KeyListener {
 
+    static Boolean space_pressed = false;
+
 
     public void actionlistner(){
 
@@ -35,6 +37,27 @@ public class Gui_actionlistener extends Rooms implements ActionListener, KeyList
             }
 
         };
+
+        if (e.getKeyCode() == KeyEvent.VK_ENTER){
+                space_pressed = true;
+        }
+
+        if (e.getKeyCode() == KeyEvent.VK_LEFT){
+            if(Spieler.game_Progress > 0 && !Functions.timerON){
+                Spieler.game_Progress = Spieler.game_Progress - 1;
+                Spieler.main();
+            }
+
+        }
+
+        if(e.getKeyCode() == KeyEvent.VK_ENTER){
+            if(!Functions.timerON){
+                Spieler.game_Progress++;
+                Spieler.main();
+            }
+        }
+
+
 
     }
 

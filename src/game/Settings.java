@@ -1,5 +1,7 @@
 package game;
 
+import java.io.File;
+
 public class Settings {
 
 
@@ -14,7 +16,9 @@ public class Settings {
 
         public void settings(){
             if (bg_music){
-                functions.mp3_player("C:\\Users\\amira\\IdeaProjects\\INF_GAME\\src\\game\\files\\bg_music.wav", -40);
+                File file = new File("src\\game\\files\\bg_music.wav");
+                String path = file.getPath();
+                functions.mp3_player(path, -20);
             }
             else{
                 functions.clip.stop();

@@ -7,6 +7,8 @@ import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 import java.io.File;
 import java.io.IOException;
+import java.nio.file.Path;
+import java.nio.file.Paths;
 
 
 public class Gui{
@@ -38,7 +40,7 @@ public class Gui{
 
 
 
-    public void main() {
+    public void main() {                  // start main frame
 
         settings.settings();
         main_frame = new JFrame("Game");
@@ -54,13 +56,13 @@ public class Gui{
     int Lx = width / 2 - 120;
     int Ly = height / 2 - 50;
 
-    public void main_panel() {                       // main panle game start with
+    public void main_panel() {                       // main panel
+
 
         try {
-            Mpanel = new ImagePanel(new ImageIcon(ImageIO.read(new File("C:\\Users\\amira\\IdeaProjects\\INF_GAME\\src\\game\\files\\MPanel_bg.jpg"))).getImage());
-
+            Mpanel = new ImagePanel(new ImageIcon(ImageIO.read(new File("C:\\INF_GAME\\src\\game\\files\\SettingsPanelBG.jpg"))).getImage());
         } catch (IOException e) {
-            e.printStackTrace();
+            throw new RuntimeException(e);
         }
 
         main_frame.getContentPane().add(Mpanel);
@@ -71,8 +73,9 @@ public class Gui{
         int Lheight = 50;
 
         start_game = new JLabel("START GAME");
-        start_game.setFont(new Font("MONOSPACED", Font.PLAIN, 40));
-        start_game.setBounds(Lx, Ly, Lwidth, Lheight);
+        start_game.setFont(new Font("MONOSPACED", Font.BOLD, 50));
+        start_game.setBounds(Lx, Ly, Lwidth+200, Lheight);
+        start_game.setForeground(Color.CYAN);
 
         start_game.setCursor(new Cursor(Cursor.HAND_CURSOR));
         start_game.addMouseListener(new MouseAdapter() {
@@ -80,8 +83,9 @@ public class Gui{
 
 
                 Mpanel.setVisible(false);
-                rooms.GPanel.setVisible(true);
-                spieler.main();
+
+//                rooms.GPanel.setVisible(true);                add later
+                Spieler.main();
 
 
             }
@@ -91,8 +95,9 @@ public class Gui{
 
 
         music_setting = new JLabel("Music on/off");
-        music_setting.setFont(new Font("MONOSPACED", Font.PLAIN, 40));
-        music_setting.setBounds(Lx, Ly+60, Lwidth+50, Lheight);
+        music_setting.setFont(new Font("MONOSPACED", Font.BOLD, 50));
+        music_setting.setForeground(Color.CYAN);
+        music_setting.setBounds(Lx, Ly+60, Lwidth+150, Lheight);
 
         music_setting.setCursor(new Cursor(Cursor.HAND_CURSOR));
         music_setting.addMouseListener(new MouseAdapter() {
@@ -102,12 +107,14 @@ public class Gui{
 
 
                     settings.bg_music = false;
+                    music_setting.setText("Music OFF");
                     settings.settings();
 
 
                 } else {
 
                     settings.bg_music = true;
+                    music_setting.setText("Music ON");
                     settings.settings();
                 }
 
@@ -117,6 +124,7 @@ public class Gui{
         Mpanel.add(music_setting);
 
     }
+
 
 
 

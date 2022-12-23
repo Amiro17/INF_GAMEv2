@@ -50,7 +50,7 @@ public class Overlay extends JPanel {
 
         Image pic_scaled = null;
         try{
-            BufferedImage pic = ImageIO.read(new File("C:\\Users\\amira\\IdeaProjects\\INF_GAME\\src\\game\\files\\inventory.png"));
+            BufferedImage pic = ImageIO.read(new File(new File("/game/files/inventory.png").getPath()));
             pic_scaled = pic.getScaledInstance(pic_w, pic_h, Image.SCALE_DEFAULT);
         }
         catch(IOException e){
@@ -62,17 +62,18 @@ public class Overlay extends JPanel {
         currentpanel.add(picLabel);
 
 
+
     }
 
 
 
-    public void right_arrow(JPanel currentpanel, JPanel next_panel){                // arrow
+    public void right_arrow(JPanel currentpanel, JPanel next_panel){                // right arrow
 
 
 
         Image arrow_pic_scaled = null;
         try{
-            BufferedImage arrow_pic = ImageIO.read(new File("C:\\Users\\amira\\IdeaProjects\\INF_GAME\\src\\game\\files\\right_arrow.png"));
+            BufferedImage arrow_pic = ImageIO.read(new File(new File("/game/files/right_arrow.png").getPath()));
             arrow_pic_scaled = arrow_pic.getScaledInstance(pic_w, pic_h, Image.SCALE_DEFAULT);
         }
         catch(IOException e){
@@ -87,8 +88,6 @@ public class Overlay extends JPanel {
 
         picLabel.addMouseListener(new MouseAdapter() {
             public void mouseClicked(MouseEvent me) {
-
-
 
                 currentpanel.setVisible(false);
                 next_panel.setVisible(true);
@@ -106,7 +105,7 @@ public class Overlay extends JPanel {
 
         Image arrow_pic_scaled = null;
         try{
-            BufferedImage arrow_pic = ImageIO.read(new File("C:\\Users\\amira\\IdeaProjects\\INF_GAME\\src\\game\\files\\left_arrow.png"));
+            BufferedImage arrow_pic = ImageIO.read(new File(new File("/game/files/left_arrow.png").getPath()));
             arrow_pic_scaled = arrow_pic.getScaledInstance(pic_w, pic_h, Image.SCALE_DEFAULT);
         }
         catch(IOException e){
@@ -121,12 +120,9 @@ public class Overlay extends JPanel {
 
         picLabel.addMouseListener(new MouseAdapter() {
             public void mouseClicked(MouseEvent me) {
-
-
                 currentpanel.setVisible(false);
                 next_panel.setVisible(true);
                 Spieler.main();
-
             }
         });
 
